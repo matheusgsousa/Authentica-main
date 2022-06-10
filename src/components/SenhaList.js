@@ -5,6 +5,12 @@ import { MdEmail, MdLock } from "react-icons/md"
 import { HiEye, HiEyeOff } from "react-icons/hi"
 import AddSenha from "./AddSenha";
 import { GrRefresh } from "react-icons/gr"
+import { BsPencil } from "react-icons/bs"
+import { BsFillTrashFill } from "react-icons/bs"
+
+
+import "./table.css"
+
 
 const SenhasList = ({ getSenhaId }) => {
     const [senhaId, setSenhaId] = useState("");
@@ -39,54 +45,64 @@ const SenhasList = ({ getSenhaId }) => {
     };
     return (
         <>
+            <div className="crud">
 
-            <AddSenha id={senhaId} setSenhaId={setSenhaId}></AddSenha>
-            <div className="mb-2">
-                <Button variant="dark edit" onClick={getSenhas}>
-                    <GrRefresh />
-                </Button>
-            </div>
+                <AddSenha id={senhaId} setSenhaId={setSenhaId}></AddSenha>
+                <div className="mb-2">
+                    <Button variant="dark edit" onClick={getSenhas}>
+                        <GrRefresh />
+                    </Button>
+                </div>
+                <div className="tabela">
 
-
-            <Table striped bordered hover size="sm">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Book Title</th>
-                        <th>Book Author</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {senhas.map((doc, index) => {
-                        return (
-                            <tr key={doc.id}>
-                                <td>{index + 1}</td>
-                                <td>{doc.title}</td>
-                                <td>{doc.pass}</td>
-                                <td>{doc.usuario}</td>
-                                <td>
-                                    <Button
-                                        variant="secondary"
-                                        className="edit"
-                                        onClick={(e) => getSenhaIdHandler(doc.id)}
-                                    >
-                                        Edit
-                                    </Button>
-                                    <Button
-                                        variant="danger"
-                                        className="delete"
-                                        onClick={(e) => deleteHandler(doc.id)}
-                                    >
-                                        Delete
-                                    </Button>
-                                </td>
+                    <table id="tabela1">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Título</th>
+                                <th>Usuário</th>
+                                <th>Senha</th>
+                                <th>Editar</th>
+                                <th>Deletar</th>
                             </tr>
-                        );
-                    })}
-                </tbody>
-            </Table>
+                        </thead>
+                        <tbody>
+                            {senhas.map((doc, index) => {
+                                return (
+                                    <tr key={doc.id}>
+                                        <td>{index + 1}</td>
+                                        <td>{doc.title}</td>
+                                        <td>{doc.usuario}</td>
+                                        <td>{doc.pass}</td>
+
+
+                                        <td>
+                                            <BsPencil
+                                                type="submit"
+                                                variant="secondary"
+                                                className="edit"
+                                                onClick={(e) => getSenhaIdHandler(doc.id)}
+                                            />
+                                        </td>
+                                        <td>
+
+                                            <BsFillTrashFill
+
+                                                type="submit"
+                                                variant="danger"
+                                                className="delete"
+                                                onClick={(e) => deleteHandler(doc.id)}
+                                            />
+
+                                        </td>
+
+                                    </tr>
+                                );
+                            })}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </>
     );
 };

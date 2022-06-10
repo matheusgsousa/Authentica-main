@@ -1,0 +1,21 @@
+.crud {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 140vh;
+    background-color: #121214;
+    margin-top: -400px;
+
+}
+
+.tabela td {
+    display: right;
+    width: 300px;
+    margin-right: 50px;
+    align-items: center;
+    background-color: white;
+}
+
+#tabela1 {
+    align-items: center;
+}
