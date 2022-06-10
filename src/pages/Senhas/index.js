@@ -62,10 +62,10 @@ const Senhas = ({ id, setSenhaId }) => {
             if (id !== undefined && id !== "") {
                 await SenhaDataService.updateSenha(id, newSenha);
                 setSenhaId("");
-                setMessage({ error: false, msg: "Updated successfully!" });
+                setMessage({ error: false, msg: "Atualizado!" });
             } else {
                 await SenhaDataService.addSenhas(newSenha);
-                setMessage({ error: false, msg: "New Book added successfully!" });
+                setMessage({ error: false, msg: "Nova senha adicionada!" });
             }
         } catch (err) {
             setMessage({ error: true, msg: err.message });

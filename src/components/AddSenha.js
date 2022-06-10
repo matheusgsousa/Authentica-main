@@ -4,6 +4,8 @@ import SenhaDataService from "../services/senhaservice";
 import { MdEmail, MdLock } from "react-icons/md"
 import { HiEye, HiEyeOff } from "react-icons/hi"
 import { FaUserAlt } from "react-icons/fa"
+import { TbWorld } from "react-icons/tb"
+
 import "./add.css"
 
 
@@ -34,10 +36,10 @@ const AddSenha = ({ id, setSenhaId }) => {
             if (id !== undefined && id !== "") {
                 await SenhaDataService.updateSenha(id, newSenha);
                 setSenhaId("");
-                setMessage({ error: false, msg: "Updated successfully!" });
+                setMessage({ error: false, msg: "Atualizado!" });
             } else {
                 await SenhaDataService.addSenhas(newSenha);
-                setMessage({ error: false, msg: "New Book added successfully!" });
+                setMessage({ error: false, msg: "Nova senha adicionada!" });
             }
         } catch (err) {
             setMessage({ error: true, msg: err.message });
@@ -79,7 +81,7 @@ const AddSenha = ({ id, setSenhaId }) => {
                     <div className="add-right">
                         <h1>Adicionar Senha</h1>
                         <div className="add-addInputEmail">
-                            <MdEmail />
+                            <TbWorld />
                             <input
                                 type="text"
                                 placeholder="Título"

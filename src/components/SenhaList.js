@@ -7,6 +7,11 @@ import AddSenha from "./AddSenha";
 import { GrRefresh } from "react-icons/gr"
 import { BsPencil } from "react-icons/bs"
 import { BsFillTrashFill } from "react-icons/bs"
+import MaterialTable from 'material-table'
+import GetAppIcon from '@material-ui/icons/GetApp';
+import AddIcon from '@material-ui/icons/Add';
+
+
 
 
 import "./table.css"
@@ -15,6 +20,8 @@ import "./table.css"
 const SenhasList = ({ getSenhaId }) => {
     const [senhaId, setSenhaId] = useState("");
     const [show, setShow] = useState(false)
+
+
 
 
     const handleClick = (e) => {
@@ -43,25 +50,29 @@ const SenhasList = ({ getSenhaId }) => {
         await SenhaDataService.deleteSenha(id);
         getSenhas();
     };
+
+
     return (
         <>
+
             <div className="crud">
 
                 <AddSenha id={senhaId} setSenhaId={setSenhaId}></AddSenha>
                 <div className="mb-2">
-                    <Button variant="dark edit" onClick={getSenhas}>
+                    <Button variant="dark edit" onClick={getSenhas} id="refresh">
                         <GrRefresh />
                     </Button>
                 </div>
                 <div className="tabela">
 
-                    <table id="tabela1">
+                    <Table striped bordered hover variant="light" id="tabela1">
                         <thead>
                             <tr>
                                 <th>#</th>
                                 <th>Título</th>
                                 <th>Usuário</th>
                                 <th>Senha</th>
+                                <th>Hide</th>
                                 <th>Editar</th>
                                 <th>Deletar</th>
                             </tr>
@@ -74,6 +85,19 @@ const SenhasList = ({ getSenhaId }) => {
                                         <td>{doc.title}</td>
                                         <td>{doc.usuario}</td>
                                         <td>{doc.pass}</td>
+                                        <td className="add-eye">
+                                            {show ? (
+                                                <HiEye
+                                                    size={20}
+                                                    onClick={handleClick}
+                                                />
+                                            ) : (
+                                                <HiEyeOff
+                                                    size={20}
+                                                    onClick={handleClick}
+                                                />
+                                            )}
+                                        </td>
 
 
                                         <td>
@@ -100,7 +124,7 @@ const SenhasList = ({ getSenhaId }) => {
                                 );
                             })}
                         </tbody>
-                    </table>
+                    </Table>
                 </div>
             </div>
         </>
