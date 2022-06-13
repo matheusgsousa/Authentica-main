@@ -4,17 +4,9 @@ import { HiEye, HiEyeOff } from "react-icons/hi"
 import { useNavigate, useOutlet } from "react-router-dom";
 import { useUserAuth } from "../../contexts/authContext";
 import "react-phone-number-input/style.css";
-import PhoneInput from "react-phone-number-input";
 import { Alert } from "react-bootstrap";
-
-
-import {
-    createUserWithEmailAndPassword,
-    onAuthStateChanged,
-} from "firebase/auth";
-
-import { auth } from "../../services/FirebaseConfig";
 import '../../pages/Cadastrar/cadastrar.css'
+
 
 function Cadastrar() {
     const [email, setEmail] = useState("");
@@ -24,6 +16,7 @@ function Cadastrar() {
     let navigate = useNavigate();
     const [user, setUser] = useState({});
     const [show, setShow] = useState(false)
+
 
 
 
@@ -66,6 +59,8 @@ function Cadastrar() {
                             type="email"
                             placeholder="Digite um email"
                             onChange={(e) => setEmail(e.target.value)}
+
+
                         />
                     </div>
 
@@ -76,7 +71,9 @@ function Cadastrar() {
                             placeholder="Digite sua senha"
                             type={show ? "text" : "password"}
                             onChange={(e) => setPassword(e.target.value)}
+
                         />
+
                         <div className="login-eye">
                             {show ? (
                                 <HiEye

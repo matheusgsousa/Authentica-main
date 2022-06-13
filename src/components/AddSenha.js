@@ -61,7 +61,7 @@ const AddSenha = ({ id, setSenhaId }) => {
             console.log("the record is :", docSnap.data());
             setTitle(docSnap.data().title);
             setPass(docSnap.data().pass);
-            setUsuario(docSnap.data().pass);
+            setUsuario(docSnap.data().usuario);
         } catch (err) {
             setMessage({ error: true, msg: err.message });
         }

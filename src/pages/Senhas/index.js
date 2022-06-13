@@ -14,7 +14,7 @@ import { Table, Button, Navbar, Nav, Container, NavDropdown, Alert } from "react
 const Senhas = ({ id, setSenhaId }) => {
     const [title, setTitle] = useState("");
     const [pass, setPass] = useState("");
-    const [status, setStatus] = useState("Available");
+    const [usuario, setUsuario] = useState("");
     const [flag, setFlag] = useState(true);
     const [message, setMessage] = useState({ error: false, msg: "" });
     const { logOut, user } = useUserAuth();
@@ -54,7 +54,7 @@ const Senhas = ({ id, setSenhaId }) => {
         const newSenha = {
             title,
             pass,
-            status,
+            usuario,
         };
         console.log(newSenha);
 
@@ -73,6 +73,7 @@ const Senhas = ({ id, setSenhaId }) => {
 
         setTitle("");
         setPass("");
+        setUsuario("");
     };
 
     const editHandler = async () => {
@@ -82,7 +83,7 @@ const Senhas = ({ id, setSenhaId }) => {
             console.log("the record is :", docSnap.data());
             setTitle(docSnap.data().title);
             setPass(docSnap.data().pass);
-            setStatus(docSnap.data().status);
+            setUsuario(docSnap.data().usuario);
         } catch (err) {
             setMessage({ error: true, msg: err.message });
         }
@@ -106,25 +107,26 @@ const Senhas = ({ id, setSenhaId }) => {
                         </Nav>
                         <Nav>
                             <Nav.Link classname="icons" eventKey={2} >
-                                <BiLogOut style={styleIcon2} />
+                                <BiLogOut style={styleIcon2} onClick={handleLogout} />
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
 
-            <div className="p-4 box">
-                {message?.msg && (
-                    <Alert
-                        variant={message?.error ? "danger" : "success"}
-                        dismissible
-                        onClose={() => setMessage("")}
-                    >
-                        {message?.msg}
-                    </Alert>
-                )}
-            </div>
+
+            {message?.msg && (
+                <Alert
+                    variant={message?.error ? "danger" : "success"}
+                    dismissible
+                    onClose={() => setMessage("")}
+                >
+                    {message?.msg}
+                </Alert>
+            )}
+
             <SenhasList></SenhasList>
+
         </>
     );
 };

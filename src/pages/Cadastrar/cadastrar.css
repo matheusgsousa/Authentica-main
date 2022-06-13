@@ -13,6 +13,14 @@ body {
 
 }
 
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: red;
+}
+
 .login-logo img {
     width: 300px;
     height: 300px;
