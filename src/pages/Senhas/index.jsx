@@ -10,6 +10,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "../../components/add.css"
 import "./senhas.css"
 
+
+
 import { Table, Button, Navbar, Nav, Container, NavDropdown, Alert } from "react-bootstrap";
 
 const Senhas = ({ id, setSenhaId }) => {
@@ -20,6 +22,7 @@ const Senhas = ({ id, setSenhaId }) => {
     const [message, setMessage] = useState({ error: false, msg: "" });
     const { logOut, user } = useUserAuth();
     const [click, setClick] = useState(false);
+
 
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);

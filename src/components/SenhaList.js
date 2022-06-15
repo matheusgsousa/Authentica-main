@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button } from "react-bootstrap";
 import SenhaDataService from "../services/senhaservice";
-import { MdEmail, MdLock } from "react-icons/md"
-import { HiEye, HiEyeOff } from "react-icons/hi"
+
 import AddSenha from "./AddSenha";
 import { GrRefresh } from "react-icons/gr"
 import { BsPencil } from "react-icons/bs"
 import { BsFillTrashFill } from "react-icons/bs"
-import MaterialTable from 'material-table'
-import GetAppIcon from '@material-ui/icons/GetApp';
-import AddIcon from '@material-ui/icons/Add';
+
 
 
 

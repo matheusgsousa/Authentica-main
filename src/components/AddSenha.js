@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Form, Alert, InputGroup, Button, ButtonGroup } from "react-bootstrap";
+import { Form, Alert, InputGroup, Button, ButtonGroup, Modal } from "react-bootstrap";
 import SenhaDataService from "../services/senhaservice";
 import { MdEmail, MdLock } from "react-icons/md"
 import { HiEye, HiEyeOff } from "react-icons/hi"
 import { FaUserAlt } from "react-icons/fa"
+import Generat from "../components/generator"
 import { TbWorld } from "react-icons/tb"
+
+
 
 import "./add.css"
 
@@ -16,12 +19,16 @@ const AddSenha = ({ id, setSenhaId }) => {
     const [show, setShow] = useState(false)
     const [flag, setFlag] = useState(true);
     const [message, setMessage] = useState({ error: false, msg: "" });
+    const [show1, setShow1] = useState(false);
+
+    const handleClose = () => setShow1(false);
+    const handleShow1 = () => setShow1(true);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setMessage("");
         if (title === "" || pass === "") {
-            setMessage({ error: true, msg: "All fields are mandatory!" });
+            setMessage({ error: true, msg: "Todos os campos precisam ser preenchidos" });
             return;
         }
         const newSenha = {
@@ -122,10 +129,16 @@ const AddSenha = ({ id, setSenhaId }) => {
                         </div>
 
                         <button type="submit"  >
-                            Add/Update
+                            Adicionar/Atualizar
                         </button>
+                        <Button onClick={handleShow1} >
+                            Gerador de Senha
+                        </Button>
+
+
                     </div>
                 </form>
+
             </div>
 
             <div className="p-4 box">
@@ -140,6 +153,12 @@ const AddSenha = ({ id, setSenhaId }) => {
                 )}
 
             </div>
+            <Modal show={show1} onHide={handleClose}>
+                <Generat />
+
+
+            </Modal>
+
         </>
     );
 };

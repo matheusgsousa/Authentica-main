@@ -1,67 +1,81 @@
 body {
-    margin: 0;
-    background-color: #121214;
+    margin: 0
 }
 
-
-
-.add {
+.formBase {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    width: 100%;
+    height: 700px;
+    width: 700px;
     background-color: #121214;
     color: white;
-    margin-top: 220px;
 
 }
 
-#bootstrap-overrides {
-    background-color: #29292E;
-    font-family: 'Roboto Slab';
-    font-size: 40px;
-    margin-bottom: 20px;
+
+
+
+#flag {
+    padding: 15px;
 }
 
-
-
-.add-logo img {
+.form-logo img {
     width: 300px;
     height: 300px;
 }
 
+.form-with-google-btn {
 
 
-.add-right {
+    font-size: 17px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: 12px 16px;
+
+}
+
+.form-right {
     background-color: #29292E;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 50px;
+    margin-left: 10px;
     padding: 20px;
-    width: 700px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
 }
 
-.add-right h1 {
+.form-right h1 {
     font-family: 'Roboto Slab';
-    font-size: 40px;
+    font-size: 35px;
     margin-bottom: 20px;
 }
 
-.add-right h4 {
-    font-family: 'Roboto Slab';
-    font-weight: 300;
-    margin-top: 40px;
+.form-right label {
     font-size: 15px;
-    font-weight: 500;
-    color: #e1e1e6;
+    text-align: center;
+
 }
 
-.add-addInputUser {
+.form-right h4 {
+
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+#reset {
+    margin: 0;
+    padding: 5px;
+    margin-right: 310px;
+
+
+}
+
+.form-formInputUser {
     display: flex;
     align-items: center;
     color: gray;
@@ -69,12 +83,12 @@ body {
     border-radius: 3px;
     padding: 3px;
     margin-top: 5px;
-    width: 98%;
-    height: 50px;
+
+    height: 40px;
     border-radius: 5px;
 }
 
-.add-addInputEmail {
+.form-formInputEmail {
     display: flex;
     align-items: center;
     color: gray;
@@ -85,17 +99,17 @@ body {
     height: 50px;
 }
 
-.add-addInputEmail svg {
+.form-formInputEmail svg {
     margin-left: 10px;
     font-size: 25px;
 }
 
-.add-addInputUser svg {
+.form-formInputUser svg {
     margin-left: 10px;
     font-size: 25px;
 }
 
-.add-addInputEmail input {
+.form-formInputEmail input {
     background: transparent;
     width: 100%;
     outline-width: 0;
@@ -107,7 +121,7 @@ body {
 
 }
 
-.add-addInputUser input {
+.form-formInputUser input {
     background: transparent;
     width: 100%;
     outline-width: 0;
@@ -123,7 +137,7 @@ input[type=password]::-ms-clear {
     display: none;
 }
 
-.add-addInputPassword {
+.form-formInputPassword {
     display: flex;
     align-items: center;
     color: gray;
@@ -136,7 +150,7 @@ input[type=password]::-ms-clear {
     border-radius: 5px;
 }
 
-.add-addInputPassword svg {
+.form-formInputPassword svg {
     margin-left: 10px;
     font-size: 25px;
 }
@@ -145,7 +159,7 @@ input[type=password]::-ms-clear {
     background-color: white;
 }
 
-.add-addInputPassword input {
+.form-formInputPassword input {
     background: transparent;
     width: 100%;
     outline-width: 0;
@@ -156,13 +170,13 @@ input[type=password]::-ms-clear {
     margin-right: 10px;
 }
 
-.add-right h1 {
+.form-right h1 {
     padding: 20px;
 }
 
-.add-right button {
+.form-right button {
     width: 98%;
-    background-color: #202024 !important;
+    background-color: #202024;
     color: #EFF2F5;
     font-weight: 800;
     height: 50px;
@@ -174,15 +188,13 @@ input[type=password]::-ms-clear {
     outline-width: 0;
 }
 
-.add-right button:hover {
-    background-color: #121214 !important;
-    color: #EFF2F5 !important;
+.form-right button:hover {
+    background-color: #121214;
+    color: #EFF2F5;
     cursor: pointer;
 }
 
-
-
-.add-eye {
+.form-eye {
     align-items: center;
     justify-content: center;
     font-size: 30;
