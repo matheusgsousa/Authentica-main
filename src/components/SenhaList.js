@@ -14,6 +14,7 @@ import AddIcon from '@material-ui/icons/Add';
 
 
 
+
 import "./table.css"
 
 
@@ -59,46 +60,33 @@ const SenhasList = ({ getSenhaId }) => {
             <div className="crud">
 
                 <AddSenha id={senhaId} setSenhaId={setSenhaId}></AddSenha>
-                <div className="mb-2">
-                    <Button variant="dark edit" onClick={getSenhas} id="refresh">
-                        <GrRefresh />
-                    </Button>
-                </div>
+
+
                 <div className="tabela">
 
-                    <Table striped bordered hover variant="light" id="tabela1">
-                        <thead>
+
+                    <Table class="table table-striped table-bordered" style={{ color: "white" }} id="tabelaboot">
+                        <thead class="table-light">
+
                             <tr>
-                                <th>#</th>
-                                <th>Título</th>
-                                <th>Usuário</th>
-                                <th>Senha</th>
-                                <th>Hide</th>
-                                <th>Editar</th>
-                                <th>Deletar</th>
+                                <th scope="col">#</th>
+                                <th scope="col">Título</th>
+                                <th scope="col">Usuário</th>
+                                <th scope="col">Senha</th>
+                                <th scope="col">Editar</th>
+                                <th scope="col">Excluir</th>
                             </tr>
                         </thead>
                         <tbody>
+
                             {senhas.map((doc, index) => {
                                 return (
-                                    <tr key={doc.id}>
+                                    <tr key={doc.id} >
                                         <td>{index + 1}</td>
                                         <td>{doc.title}</td>
                                         <td>{doc.usuario}</td>
                                         <td>{doc.pass}</td>
-                                        <td className="add-eye">
-                                            {show ? (
-                                                <HiEye
-                                                    size={20}
-                                                    onClick={handleClick}
-                                                />
-                                            ) : (
-                                                <HiEyeOff
-                                                    size={20}
-                                                    onClick={handleClick}
-                                                />
-                                            )}
-                                        </td>
+
 
 
                                         <td>
@@ -126,6 +114,9 @@ const SenhasList = ({ getSenhaId }) => {
                             })}
                         </tbody>
                     </Table>
+                    <Button onClick={getSenhas} id="refresh">
+                        <GrRefresh />
+                    </Button>
                 </div>
             </div>
         </>

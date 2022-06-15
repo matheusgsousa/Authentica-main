@@ -55,10 +55,10 @@ const CadastrarCelular = () => {
 
                         <div className="login-loginInputEmail" id="flag">
                             <PhoneInput
-                                defaultCountry="IN"
+                                defaultCountry="BR"
                                 value={number}
                                 onChange={setNumber}
-                                placeholder="Enter Phone Number"
+                                placeholder="(DDD)"
                             />
 
                         </div>
@@ -69,7 +69,7 @@ const CadastrarCelular = () => {
 
 
                         <button type="submit">
-                            Enviar OTP
+                            Enviar Código
                         </button>
                         <button type="submit" onClick={() => {
                             navigate("/Login");

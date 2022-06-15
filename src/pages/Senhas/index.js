@@ -6,8 +6,9 @@ import { useUserAuth } from "../../contexts/authContext";
 import { Link } from 'react-router-dom';
 import { BiLogOut } from "react-icons/bi"
 import { BsKey } from "react-icons/bs"
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "../../components/add.css"
+import "./senhas.css"
 
 import { Table, Button, Navbar, Nav, Container, NavDropdown, Alert } from "react-bootstrap";
 
@@ -98,6 +99,7 @@ const Senhas = ({ id, setSenhaId }) => {
     }, [id]);
     return (
         <>
+
             <Navbar collapseOnSelect expand="lg" variant="dark" id="bootstrap-overrides">
                 <Container>
                     <Navbar.Brand href="/Senha"  ><BsKey style={styleIcon} />Key Manager</Navbar.Brand>
@@ -115,17 +117,21 @@ const Senhas = ({ id, setSenhaId }) => {
             </Navbar>
 
 
-            {message?.msg && (
-                <Alert
-                    variant={message?.error ? "danger" : "success"}
-                    dismissible
-                    onClose={() => setMessage("")}
-                >
-                    {message?.msg}
-                </Alert>
-            )}
 
-            <SenhasList></SenhasList>
+
+            <SenhasList ></SenhasList>
+            <div >
+                {message?.msg && (
+                    <Alert
+                        variant={message?.error ? "danger" : "success"}
+                        dismissible
+                        onClose={() => setMessage("")}
+                    >
+                        {message?.msg}
+                    </Alert>
+                )}
+            </div>
+
 
         </>
     );

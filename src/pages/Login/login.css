@@ -61,6 +61,14 @@ body {
     color: #e1e1e6;
 }
 
+#reset {
+    margin: 0;
+    padding: 5px;
+    margin-right: 310px;
+
+
+}
+
 .login-loginInputUser {
     display: flex;
     align-items: center;

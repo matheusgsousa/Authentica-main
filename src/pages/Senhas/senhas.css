@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+    font-family: "Muli", sans-serif;
+}
+
+.mai {
+    text-transform: uppercase;
+}

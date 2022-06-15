@@ -51,6 +51,7 @@ function LoginPage() {
 
 
 
+
     const [show, setShow] = useState(false)
     let navigate = useNavigate();
 
@@ -103,15 +104,15 @@ function LoginPage() {
                     <button type="submit" style={botaog} >
                         Entrar
                     </button>
-                    <button type="submit" onClick={handleGoogleSignIn} >
-                        <FcGoogle />
-                    </button>
-
                     <button type="submit" onClick={() => {
                         navigate("/Celular");
                     }}>
                         Entrar com celular
                     </button>
+                    <button type="submit" onClick={handleGoogleSignIn} >
+                        <FcGoogle />
+                    </button>
+
 
 
 
